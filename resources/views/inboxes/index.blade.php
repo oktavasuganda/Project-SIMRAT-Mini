@@ -4,7 +4,7 @@
 @section('content')
     {{-- Kontainer utama yang akan berubah warna latar belakang --}}
     <div class="container mx-auto p-4 bg-white dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100">
-        <h1 class="text-2xl font-bold mb-4">Daftar Surat Masuk</h1>
+        <x-common.page-breadcrumb pageTitle="Daftar Surat Masuk" />
 
         @if (session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 dark:bg-green-800 dark:border-green-700 dark:text-green-200 px-4 py-3 rounded relative mb-4"
@@ -13,11 +13,45 @@
             </div>
         @endif
 
-        <div class="flex justify-between items-center mb-4">
-            <a href="{{ route('inboxes.create') }}"
-                class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition duration-150">
-                Tambah Surat Masuk
-            </a>
+        {{-- Filter/Search dan Tombol Tambah --}}
+        <div class="flex flex-col md:flex-row justify-between items-center mb-6 space-y-3 md:space-y-0">
+
+            {{-- BAGIAN KIRI: Tombol Tambah --}}
+            <div class="w-full md:w-auto order-2 md:order-1">
+                <a href="{{ route('inboxes.create') }}"
+                    class="bg-brand-600 hover:bg-brand-700 dark:bg-brand-700 dark:hover:bg-brand-800 text-white font-bold py-2 px-4 rounded transition duration-150 w-full inline-block text-center md:w-auto">
+                    Tambah Surat Masuk
+                </a>
+            </div>
+
+            {{-- BAGIAN KANAN: FORM PENCARIAN (dengan Tombol Reset) --}}
+            <form action="{{ route('inboxes.index') }}" method="GET" class="order-1 md:order-2 w-full md:w-1/3">
+                <div class="relative">
+                    <input type="text" name="search" placeholder="Cari Nomor Surat, Pengirim, atau Subjek..."
+                        value="{{ $search ?? '' }}"
+                        class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 dark:focus:border-brand-800 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 pr-11 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden dark:border-gray-700 dark:bg-gray-800 dark:text-white/90 dark:placeholder:text-white/30" />
+
+                    <button type="submit"
+                        class="absolute right-0 top-0 h-full w-10 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <svg class="w-5 h-5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                {{-- Tombol/Link Reset Pencarian --}}
+                @if ($search)
+                    <div class="mt-2 text-right">
+                        {{-- Link ini mengarah kembali ke route inboxes.index tanpa parameter query, sehingga mereset pencarian --}}
+                        <a href="{{ route('inboxes.index') }}"
+                            class="text-xs text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">
+                            Hapus Pencarian (Saat Ini: "{{ $search }}")
+                        </a>
+                    </div>
+                @endif
+            </form>
         </div>
 
         {{-- Tabel dan Kontainer Tabel --}}
