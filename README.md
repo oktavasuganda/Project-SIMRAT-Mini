@@ -1,33 +1,128 @@
-# TailAdmin Laravel Starter Kit
+# 📂 SIMRAT - Sistem Informasi Manajemen Surat
 
-This starter kit is based on [TailAdmin Laravel - Free Laravel Dashboard](https://github.com/TailAdmin/tailadmin-laravel).
+SIMRAT adalah aplikasi berbasis web untuk manajemen surat masuk dan surat keluar dalam sebuah organisasi atau instansi. Aplikasi ini bertujuan untuk mempermudah pencatatan, pengarsipan, dan pelacakan surat secara digital.
 
-We decided to merge our [LaravelDaily/starter-kit](https://github.com/LaravelDaily/starter-kit) with TailAdmin components.
+[![Laravel v12.x](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php)](https://www.php.net/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
-As a result, you get full **simple** Laravel Auth (*login, register, forget password, profile*), styled as TailAdmin.
+## ✨ Fitur Utama
 
-![](https://laraveldaily.com/uploads/2025/11/tailadmin-starter-kit-profile.png)
+SIMRAT menyediakan fitur-fitur penting untuk mengelola dokumen persuratan:
 
-![](https://laraveldaily.com/uploads/2025/11/tailadmin-starter-kit-login.png)
+-   **Manajemen Surat Masuk:** Pencatatan detail surat yang diterima, termasuk pengirim, tanggal, nomor surat, dan _file_ lampiran.
+-   **Manajemen Surat Keluar:** Pencatatan detail surat yang dikirim, termasuk penerima, tanggal, dan pengarsipan _file_ surat yang telah ditandatangani.
+-   **Pengarsipan Digital:** Menyimpan _file_ surat (PDF, DOCX, dll.) secara terpusat.
+-   **Klasifikasi Surat:** Pengelompokan surat berdasarkan jenis, sifat, atau kategori (misalnya: Penting, Rahasia, Edaran).
+-   **Fungsi Pencarian & Filter:** Pencarian cepat berdasarkan nomor surat, perihal, atau rentang tanggal.
+-   **Dasbor Informatif:** Ringkasan statistik surat masuk dan keluar.
+-   **Manajemen Pengguna & Hak Akses (RBAC).**
 
-The main point is no React/Vue/Livewire required. Only Blade and Tailwind.
+## 🛠️ Teknologi yang Digunakan
 
-Also, you're getting an example table/form with two-level menu on the sidebar to manage Users.
+Proyek ini dibangun menggunakan _stack_ teknologi modern:
 
-![](https://laraveldaily.com/uploads/2025/12/tailadmin-starter-kit-users-list.png)
+| Kategori           | Teknologi              | Deskripsi                                                                           |
+| :----------------- | :--------------------- | :---------------------------------------------------------------------------------- |
+| **Backend**        | **Laravel 12**         | _Framework_ PHP terpopuler untuk pengembangan aplikasi web yang cepat dan elegan.   |
+| **Database**       | **MySQL / PostgreSQL** | Sistem manajemen basis data relasional yang andal.                                  |
+| **Frontend**       | **Tailwind CSS**       | _Framework_ CSS _utility-first_ untuk _styling_ yang responsif.                     |
+| **Admin Template** | **TailAdmin**          | Template _dashboard_ admin yang bersih dan profesional, didukung oleh Tailwind CSS. |
+| **Bahasa**         | **PHP 8.2+**           | Bahasa pemrograman utama.                                                           |
 
-![](https://laraveldaily.com/uploads/2025/12/tailadmin-starter-kit-user-edit.png)
+## 🚀 Instalasi Lokal
+
+Ikuti langkah-langkah di bawah ini untuk menjalankan SIMRAT di lingkungan lokal Anda.
+
+### Prasyarat
+
+Pastikan sistem Anda telah terinstal:
+
+-   **PHP** (Versi 8.2 atau lebih tinggi)
+-   **Composer**
+-   **Node.js & NPM**
+-   **Database** (MySQL / SQLite)
+
+### Langkah-langkah
+
+1.  **Kloning Repositori:**
+
+    ```bash
+    git clone [https://github.com/oktavasuganda/Project-SIMRAT-Mini](https://github.com/oktavasuganda/Project-SIMRAT-Mini)
+    cd SIMRAT
+    ```
+
+2.  **Instalasi Dependensi PHP:**
+
+    ```bash
+    composer install
+    ```
+
+3.  **Konfigurasi Environment:**
+
+    -   Duplikat file `.env.example` menjadi `.env`.
+        ```bash
+        cp .env.example .env
+        ```
+    -   Buat _Application Key_:
+        ```bash
+        php artisan key:generate
+        ```
+    -   Edit file `.env` dan konfigurasikan detail _database_ Anda (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
+
+4.  **Konfigurasi Database:**
+
+    -   Jalankan migrasi untuk membuat tabel:
+        ```bash
+        php artisan migrate
+        ```
+    -   (Opsional) Isi data awal (seeding):
+        ```bash
+        php artisan db:seed
+        ```
+
+5.  **Instalasi Dependensi Frontend & Kompilasi Asset:**
+
+    -   Instal dependensi Node.js:
+        ```bash
+        npm install
+        ```
+    -   Kompilasi _asset_ (CSS dan JS):
+        ```bash
+        npm run dev
+        # Atau untuk mode pengawasan otomatis saat pengembangan:
+        # npm run watch
+        ```
+
+6.  **Jalankan Aplikasi:**
+    ```bash
+    php artisan serve
+    ```
+    Aplikasi akan tersedia di `http://127.0.0.1:8000`.
+
+## 🔒 Hak Akses Awal
+
+Setelah menjalankan `php artisan db:seed`, Anda mungkin memiliki akun pengguna _default_.
+
+| Peran             | Email                 | Password   |
+| :---------------- | :-------------------- | :--------- |
+| **Administrator** | `oktava.id@gmail.com` | `password` |
 
 ---
 
-## How to use
+*Catatan: Pastikan Anda mengubah kredensial *default* ini segera setelah instalasi di lingkungan produksi.*
 
-To use this kit, you can install it using:
+## 🤝 Kontribusi
 
-```
-laravel new --using=laraveldaily/tailadmin-starter-kit
-```
+SIMRAT dikembangkan sebagai proyek sumber terbuka (jika diizinkan). Kami sangat menyambut kontribusi Anda.
 
-From there, you can modify the kit to your needs and add more pages.
+1.  _Fork_ Repositori ini.
+2.  Buat _branch_ baru: `git checkout -b fitur/nama-fitur-baru`
+3.  Lakukan _commit_ perubahan Anda: `git commit -m 'Menambahkan fitur baru: [Deskripsi Singkat]'`
+4.  Dorong ke _branch_ Anda: `git push origin fitur/nama-fitur-baru`
+5.  Buka _Pull Request_.
 
-For more components, TailAdmin theme also has a [Pro version](https://checkout.tailadmin.com/buy/ed68b4bb-f0c6-4d20-a241-d3a5a81b0f25?aff=EEK4LN) (*affiliate link to support my work*) with 500+ components and dashboard variants.
+## 👨‍💻 Kontak
+
+[Nama Anda/Organisasi Anda] – [@oktavasuganda](https://instagram.com/oktavasuganda)
+_Link_ Proyek: [https://github.com/oktavasuganda/Project-SIMRAT-Mini](https://github.com/oktavasuganda/Project-SIMRAT-Mini)
