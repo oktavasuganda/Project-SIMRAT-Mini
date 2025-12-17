@@ -6,6 +6,16 @@ SIMRAT adalah aplikasi berbasis web untuk manajemen surat masuk dan surat keluar
 [![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php)](https://www.php.net/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
+## ⚠️ PERHATIAN PENTING (DISCLAIMER)
+
+Proyek **SIMRAT** ini **JAUH DARI SEMPURNA** dan masih dalam **TAHAP PENGEMBANGAN AKTIF**.
+
+Tujuan utama proyek ini adalah sebagai sarana **BELAJAR** dan eksplorasi fitur-fitur baru dari Laravel 12 dan TailAdmin.
+
+Kami tidak bertanggung jawab atas segala kerusakan, kerugian data, atau masalah lainnya yang timbul dari penggunaan proyek ini di luar tujuan pembelajaran. **Semua penggunaan dalam lingkungan produksi atau operasional adalah di luar tanggung jawab kami.**
+
+---
+
 ## ✨ Fitur Utama
 
 SIMRAT menyediakan fitur-fitur penting untuk mengelola dokumen persuratan:
