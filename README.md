@@ -58,7 +58,7 @@ Pastikan sistem Anda telah terinstal:
 1.  **Kloning Repositori:**
 
     ```bash
-    git clone [https://github.com/oktavasuganda/Project-SIMRAT-Mini](https://github.com/oktavasuganda/Project-SIMRAT-Mini)
+    git clone https://github.com/oktavasuganda/Project-SIMRAT-Mini
     cd SIMRAT
     ```
 
@@ -121,16 +121,6 @@ Setelah menjalankan `php artisan db:seed`, Anda mungkin memiliki akun pengguna _
 ---
 
 *Catatan: Pastikan Anda mengubah kredensial *default* ini segera setelah instalasi di lingkungan produksi.*
-
-## 🤝 Kontribusi
-
-SIMRAT dikembangkan sebagai proyek sumber terbuka (jika diizinkan). Kami sangat menyambut kontribusi Anda.
-
-1.  _Fork_ Repositori ini.
-2.  Buat _branch_ baru: `git checkout -b fitur/nama-fitur-baru`
-3.  Lakukan _commit_ perubahan Anda: `git commit -m 'Menambahkan fitur baru: [Deskripsi Singkat]'`
-4.  Dorong ke _branch_ Anda: `git push origin fitur/nama-fitur-baru`
-5.  Buka _Pull Request_.
 
 ## 👨‍💻 Kontak
 
