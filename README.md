@@ -124,5 +124,5 @@ Setelah menjalankan `php artisan db:seed`, Anda mungkin memiliki akun pengguna _
 
 ## 👨‍💻 Kontak
 
-[Nama Anda/Organisasi Anda] – [@oktavasuganda](https://instagram.com/oktavasuganda)
+Social Media – [@oktavasuganda](https://instagram.com/oktavasuganda)
 _Link_ Proyek: [https://github.com/oktavasuganda/Project-SIMRAT-Mini](https://github.com/oktavasuganda/Project-SIMRAT-Mini)
